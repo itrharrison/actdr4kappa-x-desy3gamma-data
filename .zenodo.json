@@ -1,7 +1,7 @@
 {
     "title": "actdr4kappa-x-desy3gamma-data",
     "description": "Data repository for Shaikh et al (2023) on ACT-DR4 CMB lensing x DES-Y3 cosmic shear. Please see README.md for full description",
-    "license": "cc-by-4.0",
+    "license": "cc-by-sa-4.0",
     "notes": "Can also be viewed at https://github.com/itrharrison/actdr4kappa-x-desy3gamma-data/",
     "version": "1.0",
     "communities": [
