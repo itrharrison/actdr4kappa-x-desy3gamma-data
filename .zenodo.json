@@ -1,0 +1,56 @@
+{
+    "title": "actdr4kappa-x-desy3gamma-data",
+    "description": "Data repository for Shaikh et al (2023) on ACT-DR4 CMB lensing x DES-Y3 cosmic shear. Please see README.md for full description",
+    "license": "cc-by-4.0",
+    "notes": "Can also be viewed at https://github.com/itrharrison/actdr4kappa-x-desy3gamma-data/",
+    "version": "1.0",
+    "communities": [
+        {
+        "identifier":"ecfunded"
+        }
+    ],
+    "grants": [
+        {
+            "id": "10.13039/501100000780::306478",
+            "id": "10.13039/501100000780::849169",
+            "id": "10.13039/501100000780::291329",
+            "id": "10.13039/501100000780::240672",
+            "id": "10.13039/501100000780::851274",
+        }
+    ],
+    "upload_type": "dataset",
+    "keywords": [
+        "Cosmology",
+        "Astrophysics",
+        "Weak Gravitational Lensing"
+    ],
+    "creators": [
+        {
+            "affiliation": "Arizona State University",
+            "name": "Shabbir Shaikh"
+        },
+        {
+            "orcid": "0000-0002-4437-0770",
+            "affiliation": "Cardiff University",
+            "name": "Ian Harrison"
+        },
+        {
+            "orcid": "0000-0002-3495-158X",
+            "affiliation": "Arizona State Universityy",
+            "name": "Alexander van Engelen"
+        },
+        {
+            "orcid": "0000-0002-8571-8876",
+            "affiliation": "Fermilab",
+            "name": "Gabriela A. Marques"
+        },
+    ],
+    "related)identifiers": [
+        {
+            "relation": "isSupplementTo",
+            "identifier": ARXIVNUM,
+
+        } 
+    ],
+    "access_right": "open"
+}
