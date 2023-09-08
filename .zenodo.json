@@ -1,6 +1,6 @@
 {
     "title": "actdr4kappa-x-desy3gamma-data",
-    "description": "Data repository for Shaikh et al (2023) on ACT-DR4 CMB lensing x DES-Y3 cosmic shear. Please see README.md for full description",
+    "description": "Data repository for Shaikh, Harrison et al (2023) on ACT-DR4 CMB lensing x DES-Y3 cosmic shear. Please see README.md for full description and the paper for full acknowledgements.",
     "license": "cc-by-sa-4.0",
     "notes": "Can also be viewed at https://github.com/itrharrison/actdr4kappa-x-desy3gamma-data/",
     "version": "1.0",
@@ -11,11 +11,7 @@
     ],
     "grants": [
         {
-            "id": "10.13039/501100000780::306478",
             "id": "10.13039/501100000780::849169",
-            "id": "10.13039/501100000780::291329",
-            "id": "10.13039/501100000780::240672",
-            "id": "10.13039/501100000780::851274",
         }
     ],
     "upload_type": "dataset",
@@ -26,6 +22,7 @@
     ],
     "creators": [
         {
+            "orcid": "0000-0001-6731-0351",
             "affiliation": "Arizona State University",
             "name": "Shabbir Shaikh"
         },

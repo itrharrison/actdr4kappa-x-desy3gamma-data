@@ -1,0 +1,126 @@
+theory:
+  camb:
+    extra_args:
+      bbn_predictor: PArthENoPE_880.2_standard.dat
+      halofit_version: mead2016
+      nnu: 3.046
+      num_massive_neutrinos: 1
+      theta_H0_range:
+      - 40
+      - 100
+  soliket.ccl.CCL:
+    nonlinear: false
+likelihood:
+  soliket.cross_correlation.ShearKappaLikelihood:
+    datapath: ./data/UNBLINDED_ACTPlanck_tSZfree_ACTDR4-kappa_DESY3-gamma_data_simCov_lowz.fits
+    use_tracers: all
+    z_nuisance_mode: deltaz
+    m_nuisance_mode: true
+    ia_mode: nla
+    ncovsims: 511
+params:
+  omch2:
+    latex: \Omega_\mathrm{c} h^2
+    prior:
+      max: 0.99
+      min: 0.005
+    ref:
+      dist: norm
+      loc: 0.12
+      scale: 0.001
+  H0:
+    latex: H_0
+    prior:
+      max: 100
+      min: 40
+    ref:
+      dist: norm
+      loc: 67.7
+      scale: 5.0
+  logA:
+    drop: true
+    latex: \log(10^{10} A_\mathrm{s})
+    prior:
+      max: 4.0
+      min: 1.6
+    ref:
+      dist: norm
+      loc: 3.05
+      scale: 0.001
+  As:
+    value: 'lambda logA: 1e-10*np.exp(logA)'
+  mnu:
+    value: 0.06
+  ns:
+    latex: n_\mathrm{s}
+    value: 0.9649
+  ombh2:
+    latex: \Omega_\mathrm{b} h^2
+    value: 0.0224
+  omega_de:
+    latex: \Omega_\Lambda
+  omegam:
+    latex: \Omega_\mathrm{m}
+  omegamh2:
+    derived: 'lambda omegam, H0: omegam*(H0/100)**2'
+    latex: \Omega_\mathrm{m} h^2
+  sigma8:
+    latex: \sigma_8
+  A_IA:
+    latex: A_{IA}
+    prior:
+      dist: norm
+      loc: 0.44
+      scale: 0.65
+    proposal: 0.5
+    ref: 0.44
+  eta_IA:
+    latex: \eta_{IA}
+    prior:
+      dist: norm
+      loc: -0.7
+      scale: 4.0
+    proposal: 3.0
+    ref: -0.7
+  gs_des_bin1_deltaz:
+    latex: \Delta z_{1}
+    prior:
+      dist: norm
+      loc: 0.0
+      scale: 0.018
+    proposal: 0.1
+    ref: 0.0
+  gs_des_bin2_deltaz:
+    latex: \Delta z_{2}
+    prior:
+      dist: norm
+      loc: 0.0
+      scale: 0.015
+    proposal: 0.1
+    ref: 0.0
+  gs_des_bin1_m:
+    latex: m_{1}
+    prior:
+      dist: norm
+      loc: -0.006
+      scale: 0.009
+    proposal: 0.02
+    ref: 0.0
+  gs_des_bin2_m:
+    latex: m_{2}
+    prior:
+      dist: norm
+      loc: -0.02
+      scale: 0.008
+    proposal: 0.02
+    ref: 0.0
+sampler:
+  mcmc:
+    Rminus1_cl_stop: 0.2
+    Rminus1_stop: 0.01
+    covmat: chains/ACTPlanck_H0logAomch2-s3model-s3data.covmat
+    drag: false
+    max_tries: 10000
+    oversample_power: 0.4
+    proposal_scale: 1.9
+output: UNBLINDED_ACTPlanck_tSZfree-s3-y1_ia-lowz_zbins-default_dzm-default_nu

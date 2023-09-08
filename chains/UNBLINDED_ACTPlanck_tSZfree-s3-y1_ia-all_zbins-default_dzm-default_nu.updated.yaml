@@ -1,0 +1,304 @@
+theory:
+  camb:
+    version: 1.3.5
+    path: null
+    speed: 0.3
+    stop_at_error: false
+    extra_args:
+      bbn_predictor: PArthENoPE_880.2_standard.dat
+      halofit_version: mead2016
+      nnu: 3.046
+      num_massive_neutrinos: 1
+      theta_H0_range:
+      - 40
+      - 100
+    ignore_obsolete: false
+    use_renames: false
+    external_primordial_pk: false
+    renames:
+      omegabh2: ombh2
+      omegach2: omch2
+      omegal: omega_de
+      omegak: omk
+      yhe: YHe
+      yheused: YHe
+      YpBBN: Y_p
+    input_params:
+    - As
+    - ns
+    - omch2
+    - H0
+    - mnu
+    - ombh2
+    output_params:
+    - omega_de
+    - omegam
+    - sigma8
+  soliket.ccl.CCL:
+    kmax: 0.0
+    nonlinear: false
+    z: []
+    extra_args: null
+    speed: -1
+    stop_at_error: false
+    version: null
+    input_params:
+    - omch2
+    - ombh2
+    output_params: []
+likelihood:
+  soliket.cross_correlation.ShearKappaLikelihood:
+    auto_file: soliket/data/xcorr_simulated/clgg_noiseless.txt
+    cross_file: soliket/data/xcorr_simulated/clkg_noiseless.txt
+    dndz_file: soliket/data/xcorr_simulated/dndz.txt
+    datapath: ./data/UNBLINDED_ACTPlanck_tSZfree_ACTDR4-kappa_DESY3-gamma_data_simCov.fits
+    use_tracers: all
+    z_nuisance_mode: deltaz
+    m_nuisance_mode: true
+    ia_mode: nla
+    ncovsims: 511
+    name: Gaussian
+    covpath: null
+    type: []
+    speed: -1
+    stop_at_error: false
+    version: null
+    input_params:
+    - A_IA
+    - eta_IA
+    - gs_des_bin1_deltaz
+    - gs_des_bin2_deltaz
+    - gs_des_bin3_deltaz
+    - gs_des_bin4_deltaz
+    - gs_des_bin1_m
+    - gs_des_bin2_m
+    - gs_des_bin3_m
+    - gs_des_bin4_m
+    - Alens_cross
+    - b1
+    - s1
+    - gs_des_bin1_A_IA
+    - gs_des_bin2_A_IA
+    - gs_des_bin3_A_IA
+    - gs_des_bin4_A_IA
+    - gs_des_bin1_sigmam
+    - gs_des_bin2_sigmam
+    - gs_des_bin3_sigmam
+    - gs_des_bin4_sigmam
+    output_params: []
+params:
+  omch2:
+    latex: \Omega_\mathrm{c} h^2
+    prior:
+      max: 0.99
+      min: 0.005
+    ref:
+      dist: norm
+      loc: 0.12
+      scale: 0.001
+    renames:
+    - omegach2
+  H0:
+    latex: H_0
+    prior:
+      max: 100
+      min: 40
+    ref:
+      dist: norm
+      loc: 67.7
+      scale: 5.0
+  logA:
+    drop: true
+    latex: \log(10^{10} A_\mathrm{s})
+    prior:
+      max: 4.0
+      min: 1.6
+    ref:
+      dist: norm
+      loc: 3.05
+      scale: 0.001
+  As:
+    value: 'lambda logA: 1e-10*np.exp(logA)'
+    derived: true
+  mnu:
+    value: 0.06
+  ns:
+    latex: n_\mathrm{s}
+    value: 0.9649
+  ombh2:
+    latex: \Omega_\mathrm{b} h^2
+    value: 0.0224
+    renames:
+    - omegabh2
+  omega_de:
+    latex: \Omega_\Lambda
+    derived: true
+    renames:
+    - omegal
+  omegam:
+    latex: \Omega_\mathrm{m}
+    derived: true
+  omegamh2:
+    derived: 'lambda omegam, H0: omegam*(H0/100)**2'
+    latex: \Omega_\mathrm{m} h^2
+  sigma8:
+    latex: \sigma_8
+    derived: true
+  A_IA:
+    latex: A_{IA}
+    prior:
+      dist: norm
+      loc: 0.44
+      scale: 0.65
+    proposal: 0.5
+    ref: 0.44
+  eta_IA:
+    latex: \eta_{IA}
+    prior:
+      dist: norm
+      loc: -0.7
+      scale: 4.0
+    proposal: 3.0
+    ref: -0.7
+  gs_des_bin1_deltaz:
+    latex: \Delta z_{1}
+    prior:
+      dist: norm
+      loc: 0.0
+      scale: 0.018
+    proposal: 0.1
+    ref: 0.0
+  gs_des_bin2_deltaz:
+    latex: \Delta z_{2}
+    prior:
+      dist: norm
+      loc: 0.0
+      scale: 0.015
+    proposal: 0.1
+    ref: 0.0
+  gs_des_bin3_deltaz:
+    latex: \Delta z_{3}
+    prior:
+      dist: norm
+      loc: 0.0
+      scale: 0.011
+    proposal: 0.1
+    ref: 0.0
+  gs_des_bin4_deltaz:
+    latex: \Delta z_{4}
+    prior:
+      dist: norm
+      loc: 0.0
+      scale: 0.017
+    proposal: 0.1
+    ref: 0.0
+  gs_des_bin1_m:
+    latex: m_{1}
+    prior:
+      dist: norm
+      loc: -0.006
+      scale: 0.009
+    proposal: 0.02
+    ref: 0.0
+  gs_des_bin2_m:
+    latex: m_{2}
+    prior:
+      dist: norm
+      loc: -0.02
+      scale: 0.008
+    proposal: 0.02
+    ref: 0.0
+  gs_des_bin3_m:
+    latex: m_{3}
+    prior:
+      dist: norm
+      loc: -0.024
+      scale: 0.008
+    proposal: 0.02
+    ref: 0.0
+  gs_des_bin4_m:
+    latex: m_{4}
+    prior:
+      dist: norm
+      loc: -0.037
+      scale: 0.008
+    proposal: 0.02
+    ref: 0.0
+  Alens_cross:
+    value: 1.0
+    latex: A_\mathrm{lens}
+  b1:
+    prior:
+      min: 0.0
+      max: 10.0
+    latex: b_1
+  s1:
+    value: 0.4
+    latex: s_1
+  gs_des_bin1_A_IA:
+    value: 0.5
+  gs_des_bin2_A_IA:
+    value: 0.52
+  gs_des_bin3_A_IA:
+    value: 0.54
+  gs_des_bin4_A_IA:
+    value: 0.56
+  gs_des_bin1_sigmam:
+    value: 0.01
+  gs_des_bin2_sigmam:
+    value: 0.01
+  gs_des_bin3_sigmam:
+    value: 0.01
+  gs_des_bin4_sigmam:
+    value: 0.01
+sampler:
+  mcmc:
+    burn_in: 0
+    max_tries: 10000
+    covmat: chains/ACTPlanck_H0logAomch2-s3model-s3data.covmat
+    covmat_params: null
+    proposal_scale: 1.9
+    output_every: 60s
+    learn_every: 40d
+    temperature: 1
+    learn_proposal: true
+    learn_proposal_Rminus1_max: 2.0
+    learn_proposal_Rminus1_max_early: 30.0
+    learn_proposal_Rminus1_min: 0.0
+    max_samples: .inf
+    Rminus1_stop: 0.01
+    Rminus1_cl_stop: 0.2
+    Rminus1_cl_level: 0.95
+    Rminus1_single_split: 4
+    measure_speeds: true
+    oversample_power: 0.4
+    oversample_thin: true
+    drag: false
+    blocking:
+    - - 1
+      - - omch2
+        - H0
+    - - 1
+      - - logA
+    - - 1
+      - - A_IA
+        - eta_IA
+        - gs_des_bin1_deltaz
+        - gs_des_bin2_deltaz
+        - gs_des_bin3_deltaz
+        - gs_des_bin4_deltaz
+        - gs_des_bin1_m
+        - gs_des_bin2_m
+        - gs_des_bin3_m
+        - gs_des_bin4_m
+        - b1
+    callback_function: null
+    callback_every: null
+    seed: null
+    check_every: null
+    oversample: null
+    drag_limits: null
+    fallback_covmat_scale: 4
+    version: 3.3.1
+output: UNBLINDED_ACTPlanck_tSZfree-s3-y1_ia-all_zbins-default_dzm-default_nu
+version: 3.3.1
