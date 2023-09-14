@@ -3,7 +3,7 @@
     "description": "Data repository for Shaikh, Harrison et al (2023) on ACT-DR4 CMB lensing x DES-Y3 cosmic shear. Please see README.md for full description and the paper for full acknowledgements.",
     "license": "cc-by-sa-4.0",
     "notes": "Can also be viewed at https://github.com/itrharrison/actdr4kappa-x-desy3gamma-data/",
-    "version": "1.0",
+    "version": "1.0.1",
     "communities": [
         {
         "identifier":"ecfunded"
@@ -11,7 +11,7 @@
     ],
     "grants": [
         {
-            "id": "10.13039/501100000780::849169",
+            "id": "10.13039/501100000780::849169"
         }
     ],
     "upload_type": "dataset",
@@ -40,12 +40,12 @@
             "orcid": "0000-0002-8571-8876",
             "affiliation": "Fermilab",
             "name": "Gabriela A. Marques"
-        },
+        }
     ],
-    "related)identifiers": [
+    "related_identifiers": [
         {
             "relation": "isSupplementTo",
-            "identifier": ARXIVNUM,
+            "identifier": "arXiv:2309.04412"
 
         } 
     ],
