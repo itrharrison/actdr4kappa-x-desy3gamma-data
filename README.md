@@ -1,7 +1,7 @@
 # actdr4kappa-x-desy3gamma-data
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a> [![DOI](https://zenodo.org/badge/687423358.svg)](https://zenodo.org/badge/latestdoi/687423358)
 
-Data repository for Shaikh et al (2023) on ACT-DR4 CMB lensing x DES-Y3 cosmic shear.
+Data repository for [Shaikh, Harrison et al (2023)](https://arxiv.org/abs/2309.04412) on ACT-DR4 CMB lensing x DES-Y3 cosmic shear.
 
 ## Contents:
 `data/`
@@ -28,7 +28,7 @@ The result including only the highest redshift bin from DES (4) and varying only
 ## Citation
 These data and chains were generated as part of the work:<br>
 >*Cosmology from Cross-Correlation of ACT-DR4 CMB Lensing and  DES-Y3 Cosmic Shear*<br>
->S. Shaikh, I. Harrison, A. van Engelen, G. Marques et al. arXiv: [2309.XXXXX](https://arxiv.org/abs/2309.XXXXX). To be submitted to Monthly Notices of the Royal Astronomical Society.
+>S. Shaikh, I. Harrison, A. van Engelen, G. Marques et al. arXiv: [2309.04412](https://arxiv.org/abs/2309.04412). To be submitted to Monthly Notices of the Royal Astronomical Society.
 
 
 The data vector in this analysis was formed by combining the ACT-DR4 lensing map:<br>
